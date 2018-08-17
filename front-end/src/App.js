@@ -78,7 +78,7 @@ class App extends Component {
             <hr />
             {this.state.currentSortOption} */}
 
-            {this.state.showPostForm && <Form addPost={newPost => this.updatePostsArray(newPost)} />}
+            {this.state.showPostForm && <Form toggle={() => this.toggleShowPostForm()} addPost={newPost => this.updatePostsArray(newPost)} />}
             <PostList posts={this.state.posts} />
           </div>
         );

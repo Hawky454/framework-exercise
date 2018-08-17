@@ -27,6 +27,7 @@ class Form extends React.Component {
          newPost.votes = 0;
          newPost.date = "";
          this.props.addPost(newPost);
+         this.props.toggle();
      }
      
 
@@ -36,19 +37,19 @@ class Form extends React.Component {
         <form>
           <div className="form-group">
             <label htmlFor="title">Title</label>
-            <input type="text" className="form-control" placeholder="Title" value={this.state.value} onChange={event => this.setState({ postTitle: event.target.value})}/>
+            <input type="text" className="form-control" placeholder="Title" onChange={event => this.setState({ postTitle: event.target.value})}/>
          </div>
         <div className="form-group">
            <label htmlFor="body">Body</label>
-           <textarea className="form-control"  placeholder="Body" value={this.state.value} onChange={event => this.setState({body: event.target.value})}/>
+           <textarea className="form-control"  placeholder="Body"  onChange={event => this.setState({body: event.target.value})}/>
           </div>
           <div className="form-group">
             <label htmlFor="Author">Author</label>
-            <input type="text" className="form-control" placeholder="Author" value={this.state.value} onChange={event => this.setState({author: event.target.value})}/>
+            <input type="text" className="form-control" placeholder="Author" onChange={event => this.setState({author: event.target.value})}/>
          </div>
         <div className="form-group">
            <label htmlFor="imgURl">Image URL</label>
-           <input type="text" className="form-control"  placeholder="Image URL" vlaue={this.state.value} onChange={event => this.setState({imageUrl: event.target.value})}/>
+           <input type="text" className="form-control"  placeholder="Image URL" onChange={event => this.setState({imageUrl: event.target.value})}/>
           </div>
           <button type="button" className="btn btn-primary" onClick={(event) => this.onSubmit(event)}>Create Post</button>
         </form>
